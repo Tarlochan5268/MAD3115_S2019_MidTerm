@@ -5,10 +5,34 @@
 	<key>UserList</key>
 	<array>
 		<dict>
-			<key>New item</key>
-			<string></string>
-			<key>New item - 2</key>
-			<string></string>
+			<key>email</key>
+			<string>nayna@gmail.com</string>
+			<key>password</key>
+			<string>nahinaa</string>
+		</dict>
+		<dict>
+			<key>email</key>
+			<string>ankita@gmail.com</string>
+			<key>password</key>
+			<string>iantkilla</string>
+		</dict>
+		<dict>
+			<key>email</key>
+			<string>nikhil@gmail.com</string>
+			<key>password</key>
+			<string>noikillthebill</string>
+		</dict>
+		<dict>
+			<key>email</key>
+			<string>kishore@gmail.com</string>
+			<key>password</key>
+			<string>kisswalahore</string>
+		</dict>
+		<dict>
+			<key>email</key>
+			<string>brotherstarlochan5268@gmail.com</string>
+			<key>password</key>
+			<string>52685268</string>
 		</dict>
 	</array>
 </dict>

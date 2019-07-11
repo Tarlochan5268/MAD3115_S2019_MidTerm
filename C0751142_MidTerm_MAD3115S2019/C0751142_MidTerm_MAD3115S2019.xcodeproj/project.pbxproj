@@ -25,6 +25,7 @@
 		842C7E1C22D7FD8400A75CBD /* Internet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C7E1B22D7FD8400A75CBD /* Internet.swift */; };
 		842C7E1E22D7FD8900A75CBD /* Hydro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C7E1D22D7FD8900A75CBD /* Hydro.swift */; };
 		842C7E2022D7FD8E00A75CBD /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C7E1F22D7FD8E00A75CBD /* Customer.swift */; };
+		842C7E2222D7FE4200A75CBD /* MyDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C7E2122D7FE4200A75CBD /* MyDataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		842C7E1B22D7FD8400A75CBD /* Internet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Internet.swift; sourceTree = "<group>"; };
 		842C7E1D22D7FD8900A75CBD /* Hydro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hydro.swift; sourceTree = "<group>"; };
 		842C7E1F22D7FD8E00A75CBD /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		842C7E2122D7FE4200A75CBD /* MyDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				842C7DF822D7F90F00A75CBD /* LaunchScreen.storyboard */,
 				842C7DFB22D7F90F00A75CBD /* Info.plist */,
 				842C7E0222D7FA7800A75CBD /* UserInfo.plist */,
+				842C7E2122D7FE4200A75CBD /* MyDataStore.swift */,
 			);
 			path = C0751142_MidTerm_MAD3115S2019;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				842C7E2222D7FE4200A75CBD /* MyDataStore.swift in Sources */,
 				842C7E1322D7FD3100A75CBD /* CustomerError.swift in Sources */,
 				842C7E2022D7FD8E00A75CBD /* Customer.swift in Sources */,
 				842C7E0722D7FCF300A75CBD /* IDisplay.swift in Sources */,
