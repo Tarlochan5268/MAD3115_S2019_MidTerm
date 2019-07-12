@@ -9,8 +9,6 @@
 import UIKit
 
 class BillListTableViewController: UITableViewController {
-    var arrayStudents : [String] = ["tarlochan","tarlochan","tarlochan","tarlochan","tarlochan","tarlochan","tarlochan","tarlochan","tarlochan"]
-    var countMin : Int = 0
     override func viewDidLoad()
     {
         MyDataStore.LoadCustomers()
@@ -40,8 +38,6 @@ class BillListTableViewController: UITableViewController {
         let customer = MyDataStore.customerArray[indexPath.row]
         print("customer : ",customer.fullName)
         cell.textLabel?.text = customer.fullName
-        //print("count : ",count)
-        countMin += 1
         return cell
     }
 

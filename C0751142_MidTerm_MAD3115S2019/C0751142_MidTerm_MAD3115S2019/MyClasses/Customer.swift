@@ -143,7 +143,7 @@ class Customer
     }
     
     // For Email Valid
-    private func isValidEmail(emailStr:String) -> Bool
+    public func isValidEmail(emailStr:String) -> Bool
     {
         let regex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         

@@ -41,50 +41,63 @@ class LoginViewController: UIViewController {
     
     @IBAction func actionLogin(_ sender: Any)
     {
-        let myEmail = self.txtEmail.text!
-        let myPassword = self.txtPassword.text!
+        let myEmail : String = self.txtEmail.text!
+        let myPassword : String = self.txtPassword.text!
         if let password = MyDataStore.usersDict[myEmail]
         {
-            // User Exists
-            if(myPassword == password)
+            if(myEmail.isValidEmail() == true)
             {
-                // user password correct
-                // remember me code
-                let userDefault = UserDefaults.standard
-                if switchRememberMe.isOn
+                //EMAIL CORRECT BY REGEX 
+                // User Exists
+                if(myPassword == password)
                 {
+                    // user password correct
+                    // remember me code
+                    let userDefault = UserDefaults.standard
+                    if switchRememberMe.isOn
+                    {
+                        
+                        userDefault.setValue(txtEmail.text, forKey: "userEmail")
+                        userDefault.set(txtPassword.text, forKey: "userPassword")
+                    }
+                    else
+                    {
+                        userDefault.removeObject(forKey: "userEmail")
+                        userDefault.removeObject(forKey: "userPassword")
+                    }
                     
-                    userDefault.setValue(txtEmail.text, forKey: "userEmail")
-                    userDefault.set(txtPassword.text, forKey: "userPassword")
+                    // User password correct
+                    let alertControl = UIAlertController(title: "Message", message: "Correct Information Entered", preferredStyle: .alert)
+                    let actionOk = UIAlertAction(title: "Ok", style: .default, handler:
+                    {
+                        _ -> Void in
+                        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "billListTableVC") as! BillListTableViewController
+                        self.navigationController?.pushViewController(nextViewController, animated: true)
+                    })
+                    alertControl.addAction(actionOk)
+                    self .present(alertControl , animated: true , completion: nil)
+                    
                 }
                 else
                 {
-                    userDefault.removeObject(forKey: "userEmail")
-                    userDefault.removeObject(forKey: "userPassword")
+                    //user password incorrect
+                    let alertControl = UIAlertController(title: "Message", message: "Invalid Password Entered", preferredStyle: .alert)
+                    let actionOk = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                    alertControl.addAction(actionOk)
+                    self .present(alertControl , animated: true , completion: nil)
+                    
                 }
-                
-                // User password correct
-                let alertControl = UIAlertController(title: "Message", message: "Correct Information Entered", preferredStyle: .alert)
-                let actionOk = UIAlertAction(title: "Ok", style: .default, handler:
-                {
-                    _ -> Void in
-                    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "billListTableVC") as! BillListTableViewController
-                    self.navigationController?.pushViewController(nextViewController, animated: true)
-                })
-                alertControl.addAction(actionOk)
-                self .present(alertControl , animated: true , completion: nil)
                 
             }
             else
             {
-                //user password incorrect
-                let alertControl = UIAlertController(title: "Message", message: "Invalid Password Entered", preferredStyle: .alert)
+                // EMAIL NOT VALID BY REGEX
+                let alertControl = UIAlertController(title: "Message", message: "Invalid Email Entered", preferredStyle: .alert)
                 let actionOk = UIAlertAction(title: "Ok", style: .default, handler: nil)
                 alertControl.addAction(actionOk)
-                self .present(alertControl , animated: true , completion: nil)
-                
-            }
+                self .present(alertControl , animated: true , completion: nil)            }
+            
         }
         else
         {
