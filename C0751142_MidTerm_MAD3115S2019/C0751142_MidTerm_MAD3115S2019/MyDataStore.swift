@@ -9,9 +9,9 @@
 import Foundation
 class MyDataStore
 {
+    static public var usersDict : [String : String] = [:]
     static public var usersArray : [User] = []
-    var email = ""
-    var password = ""
+    
     static func readUserDataFromPlist()
     {
         if let pList = Bundle.main.path(forResource: "UserInfo", ofType: "plist")
@@ -21,18 +21,31 @@ class MyDataStore
                 // Reading User Array
                 if let users = dict["UserList"] as? [[String:Any]]
                 {
-                    let myuser = User()
+                    
                     //print(users)
                     for user in users
                     {
+                        let myuser = User()
                         myuser.email = user["email"] as! String
                         myuser.password = user["password"] as! String
+                        usersArray.append(myuser)
+                        usersDict.updateValue(myuser.password, forKey: myuser.email)
                     }
-                    usersArray.append(myuser) 
+                    
                 }
             }
             
         }
         
+    }
+    
+    static func displayArrayDict()
+    {
+        for user in usersArray
+        {
+            print(user.userId)
+            print(user.email)
+            print(user.password)
+        }
     }
 }
