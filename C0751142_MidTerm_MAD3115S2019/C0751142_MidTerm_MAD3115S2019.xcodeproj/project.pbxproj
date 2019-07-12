@@ -26,6 +26,7 @@
 		842C7E1E22D7FD8900A75CBD /* Hydro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C7E1D22D7FD8900A75CBD /* Hydro.swift */; };
 		842C7E2022D7FD8E00A75CBD /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C7E1F22D7FD8E00A75CBD /* Customer.swift */; };
 		842C7E2222D7FE4200A75CBD /* MyDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C7E2122D7FE4200A75CBD /* MyDataStore.swift */; };
+		842C7E2422D80DDD00A75CBD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C7E2322D80DDD00A75CBD /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		842C7E1D22D7FD8900A75CBD /* Hydro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hydro.swift; sourceTree = "<group>"; };
 		842C7E1F22D7FD8E00A75CBD /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		842C7E2122D7FE4200A75CBD /* MyDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataStore.swift; sourceTree = "<group>"; };
+		842C7E2322D80DDD00A75CBD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				842C7E1B22D7FD8400A75CBD /* Internet.swift */,
 				842C7E1D22D7FD8900A75CBD /* Hydro.swift */,
 				842C7E1F22D7FD8E00A75CBD /* Customer.swift */,
+				842C7E2322D80DDD00A75CBD /* User.swift */,
 			);
 			path = MyClasses;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				842C7E1322D7FD3100A75CBD /* CustomerError.swift in Sources */,
 				842C7E2022D7FD8E00A75CBD /* Customer.swift in Sources */,
 				842C7E0722D7FCF300A75CBD /* IDisplay.swift in Sources */,
+				842C7E2422D80DDD00A75CBD /* User.swift in Sources */,
 				842C7E1E22D7FD8900A75CBD /* Hydro.swift in Sources */,
 				842C7E0B22D7FCFD00A75CBD /* extension_date.swift in Sources */,
 				842C7E0F22D7FD0500A75CBD /* countryType.swift in Sources */,

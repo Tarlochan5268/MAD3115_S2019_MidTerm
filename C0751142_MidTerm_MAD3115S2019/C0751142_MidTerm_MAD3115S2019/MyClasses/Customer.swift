@@ -85,19 +85,28 @@ class Customer
         self.email = ""
         self.arrayOfBills = []
     }
-    init(customerid : Int,firstName : String,lastName : String,email : String,arrayOfBills : [Bill])
+    init(customerid : Int,firstName : String,lastName : String,email : String,arrayOfBills : [Bill]) throws
     {
         self.customerid = customerid
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
-        /*
         if !self.isValidEmail(emailStr: email)
         {
             throw CustomerError.invalidEmail
         }
-        */
         self.arrayOfBills = arrayOfBills
+    }
+    init(customerid : Int,firstName : String,lastName : String,email : String) throws
+    {
+        self.customerid = customerid
+        self.firstName = firstName
+        self.lastName = lastName
+        self.email = email
+        if !self.isValidEmail(emailStr: email)
+        {
+            throw CustomerError.invalidEmail
+        }
     }
     
     static var customerDict = [Int:Customer]()
