@@ -56,6 +56,7 @@ class AddMobileBillViewController: UIViewController {
                 })
                 alertControl.addAction(actionOk)
                 self .present(alertControl , animated: true , completion: nil)
+                bill.display()
             }
             else
             {

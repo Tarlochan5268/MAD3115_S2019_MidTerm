@@ -40,6 +40,7 @@ class AddInternetBillViewController: UIViewController {
         })
         alertControl.addAction(actionOk)
         self .present(alertControl , animated: true , completion: nil)
+        bill.display()
     }
     /*
     // MARK: - Navigation

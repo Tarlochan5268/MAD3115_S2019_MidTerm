@@ -53,7 +53,7 @@ class ShowBillDetailsViewController: UIViewController,UITableViewDelegate,UITabl
         return billArray.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(140)
+        return CGFloat(132)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
