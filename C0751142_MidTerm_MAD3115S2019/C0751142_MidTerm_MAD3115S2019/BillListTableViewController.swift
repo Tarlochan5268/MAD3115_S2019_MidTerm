@@ -9,9 +9,11 @@
 import UIKit
 
 class BillListTableViewController: UITableViewController {
+    public static var SELECTED_ROW : Int = 0
     override func viewDidLoad()
     {
-        MyDataStore.LoadCustomers()
+        self.title = "Customers"
+        //MyDataStore.LoadCustomers()
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
@@ -24,22 +26,22 @@ class BillListTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return MyDataStore.customerArray.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath)
         let customer = MyDataStore.customerArray[indexPath.row]
-        print("customer : ",customer.fullName)
+        print("customer id : ",customer.customerid,"customer : ",customer.fullName)
         cell.textLabel?.text = customer.fullName
+        //BillListTableViewController.SELECTED_ROW = indexPath.row
         return cell
     }
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -79,11 +81,35 @@ class BillListTableViewController: UITableViewController {
     /*
     // MARK: - Navigation
 
+    
+    */
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "showDetail"
+        {
+            if let indexPath = tableView.indexPathForSelectedRow
+            {
+                //print("INDEX PATH : ",indexPath)
+                BillListTableViewController.SELECTED_ROW = indexPath.row
+                //let customer = MyDataStore.customerArray[indexPath.row]
+                //print("customer detail name : ",customer.fullName)
+                let controller = segue.destination as! ShowBillDetailsViewController
+                //controller.lblId?.text = "Customer ID : \(customer.customerid)"
+                //print(controller.lblId.text!)
+                controller.navigationItem.leftItemsSupplementBackButton = true
+                controller.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(GoToAddNewBillView))
+            }
+        }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+    @objc func GoToAddNewBillView()
+    {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "AddNewBillVC") as! AddNewBillViewController
+        self.navigationController?.pushViewController(nextViewController, animated: true)
+    }
 
 }

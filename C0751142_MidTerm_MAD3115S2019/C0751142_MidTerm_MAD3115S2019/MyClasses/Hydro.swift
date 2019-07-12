@@ -9,8 +9,8 @@
 import Foundation
 class Hydro : Bill
 {
-    var agencyName : String
-    var unitConsumed : Float
+    public var agencyName : String
+    public var unitConsumed : Float
     let unitRate : Float = 10
     
     override init()
@@ -19,6 +19,13 @@ class Hydro : Bill
         self.unitConsumed = 0
         super.init()
     }
+    init(obj : Hydro)
+    {
+        self.agencyName = obj.agencyName
+        self.unitConsumed = obj.unitConsumed
+        super.init(billId: obj.billId, billDate: obj.billDate, billType: obj.billType,totalBillAmount: obj.calculateTotal())
+        
+    }
     init(billId: Int, billDate: Date, billType: BillType,agencyName : String,unitConsumed : Float )
     {
         self.agencyName = agencyName
@@ -26,6 +33,13 @@ class Hydro : Bill
         super.init(billId: billId, billDate: billDate, billType: billType,totalBillAmount: 0)
     }
     
+    override init(billId : Int,billDate : Date,billType : BillType,totalBillAmount : Float) {
+        //Bill.BILL_ID_COUNT += 1
+        //self.billId = Bill.BILL_ID_COUNT
+        self.agencyName = ""
+        self.unitConsumed = 0
+        super.init(billId: billId, billDate: billDate, billType: billType,totalBillAmount: 0)
+    }
     override func calculateTotal()->Float
     {
         var total : Float = 0

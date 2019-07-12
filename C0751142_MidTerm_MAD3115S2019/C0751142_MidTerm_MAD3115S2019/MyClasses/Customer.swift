@@ -9,6 +9,7 @@
 import Foundation
 class Customer
 {
+    static var CUSTOMER_ID_COUNT = 0
     
     static func display()
     {
@@ -65,7 +66,7 @@ class Customer
         }
     }
     
-    var arrayOfBills : [Bill] = [Bill]()
+    public var arrayOfBills : [Bill] = [Bill]()
     //computed value
     var totalBillToPay : Float
     {
@@ -79,7 +80,8 @@ class Customer
     
     init()
     {
-        self.customerid = 0
+        Customer.CUSTOMER_ID_COUNT += 1
+        self.customerid = Customer.CUSTOMER_ID_COUNT
         self.firstName = ""
         self.lastName = ""
         self.email = ""
@@ -87,7 +89,8 @@ class Customer
     }
     init(customerid : Int,firstName : String,lastName : String,email : String,arrayOfBills : [Bill])
     {
-        self.customerid = customerid
+        Customer.CUSTOMER_ID_COUNT += 1
+        self.customerid = Customer.CUSTOMER_ID_COUNT
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
@@ -101,7 +104,8 @@ class Customer
     }
     init(customerid : Int,firstName : String,lastName : String,email : String)
     {
-        self.customerid = customerid
+        Customer.CUSTOMER_ID_COUNT += 1
+        self.customerid = Customer.CUSTOMER_ID_COUNT
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
@@ -111,6 +115,37 @@ class Customer
             throw CustomerError.invalidEmail
         }
  */
+    }
+    
+    
+    init(firstName : String,lastName : String,email : String,arrayOfBills : [Bill])
+    {
+        Customer.CUSTOMER_ID_COUNT += 1
+        self.customerid = Customer.CUSTOMER_ID_COUNT
+        self.firstName = firstName
+        self.lastName = lastName
+        self.email = email
+        /*
+         if !self.isValidEmail(emailStr: email)
+         {
+         throw CustomerError.invalidEmail
+         }
+         */
+        self.arrayOfBills = arrayOfBills
+    }
+    init(firstName : String,lastName : String,email : String)
+    {
+        Customer.CUSTOMER_ID_COUNT += 1
+        self.customerid = Customer.CUSTOMER_ID_COUNT
+        self.firstName = firstName
+        self.lastName = lastName
+        self.email = email
+        /*
+         if !self.isValidEmail(emailStr: email)
+         {
+         throw CustomerError.invalidEmail
+         }
+         */
     }
     
     static public var customerDict = [Int:Customer]()
@@ -149,5 +184,18 @@ class Customer
         
         let emailTest = NSPredicate(format:"SELF MATCHES %@", regex)
         return emailTest.evaluate(with: emailStr)
+    }
+    
+    public func returnNoofBill(customer : Customer) -> Int
+    {
+        return arrayOfBills.count
+    }
+    public func addBillsToCustomer(bills : [Bill])
+    {
+        self.arrayOfBills = bills
+    }
+    public func addBillToCustomer(bill : Bill)
+    {
+        self.arrayOfBills.append(bill)
     }
 }

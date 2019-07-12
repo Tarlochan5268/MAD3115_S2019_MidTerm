@@ -9,6 +9,7 @@
 import Foundation
 class Bill : IDisplay
 {
+    //static var BILL_ID_COUNT = 0
     func display()
     {
         print("Bill id : ",self.billId)
@@ -17,19 +18,23 @@ class Bill : IDisplay
         print("Bill Amount : ",self.totalBillAmount.currency())
     }
     
-    let billId : Int
+    var billId : Int
     var billDate : Date
     var billType : BillType
     public var totalBillAmount : Float
     
     init()
     {
+        //Bill.BILL_ID_COUNT += 1
+        //self.billId = Bill.BILL_ID_COUNT
         self.billId = 0
         self.billDate = Date()
         self.billType = BillType.None
         self.totalBillAmount = 0
     }
     init(billId : Int,billDate : Date,billType : BillType,totalBillAmount : Float) {
+        //Bill.BILL_ID_COUNT += 1
+        //self.billId = Bill.BILL_ID_COUNT
         self.billId = billId
         self.billDate = billDate
         self.billType = billType

@@ -7,10 +7,11 @@
 //
 
 import Foundation
-enum BillType
+enum BillType : String
 {
-    case Mobile
-    case Internet
-    case Hydro
-    case None
+    case Mobile = "Mobile"
+    case Internet = "Internet"
+    case Hydro = "Hydro"
+    case None = "None"
+    static let allValues = ["Mobile","Internet","Hydro"]
 }

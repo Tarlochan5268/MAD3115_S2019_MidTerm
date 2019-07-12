@@ -94,10 +94,10 @@ class MyDataStore
         
         let formattedDate5 : Date = dateFormatter.date(from: "11-06-2019")!
         let c5bill1 : Bill = Hydro(billId: 1, billDate: formattedDate3, billType: BillType.Hydro, agencyName: "Planet Energy", unitConsumed: 9)
-        c2bill1.calculateTotal()
+        c5bill1.calculateTotal()
         
         let c5bill2 : Bill = Internet(billId: 2, billDate: formattedDate3, billType: BillType.Internet, providerName: "TELUS", internetGBused: 100)
-        c2bill2.calculateTotal()
+        c5bill2.calculateTotal()
         
         let customer5 : Customer = Customer(customerid: 5, firstName: "Marian", lastName: "Holy", email: "marian123@gmail.com", arrayOfBills: [c5bill1,c5bill2])
         Customer.addCustomer(customer: customer5)
@@ -105,4 +105,20 @@ class MyDataStore
         self.customerArray = Array(Customer.customerDict.values)
         
     }
+    static public func getBillsOfCustomer(row : Int) -> [Bill]
+    {
+        let customer = MyDataStore.customerArray[row]
+        return customer.arrayOfBills
+    }
+    static public func removeInsertCustomer(row : Int , customer : Customer)
+    {
+        var oldCustomer : Customer = MyDataStore.customerArray.remove(at: row)
+        var newCustomer : Customer = customer
+        MyDataStore.customerArray.insert(newCustomer, at: row)
+        print("old customer : ",oldCustomer.fullName)
+        print("new customer : ",newCustomer.fullName)
+        var latestcustomer : Customer = MyDataStore.customerArray[row]
+        print("latestcustomer : ",latestcustomer.fullName)
+    }
+    
 }

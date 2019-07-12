@@ -27,6 +27,13 @@
 		842C7E2022D7FD8E00A75CBD /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C7E1F22D7FD8E00A75CBD /* Customer.swift */; };
 		842C7E2222D7FE4200A75CBD /* MyDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C7E2122D7FE4200A75CBD /* MyDataStore.swift */; };
 		842C7E2422D80DDD00A75CBD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C7E2322D80DDD00A75CBD /* User.swift */; };
+		84A2FE1E22D8E29200CCF2C9 /* ShowBillDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2FE1D22D8E29200CCF2C9 /* ShowBillDetailsViewController.swift */; };
+		84A2FE2022D8E31400CCF2C9 /* NewCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2FE1F22D8E31400CCF2C9 /* NewCustomerViewController.swift */; };
+		84A2FE2222D906B000CCF2C9 /* BillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2FE2122D906B000CCF2C9 /* BillTableViewCell.swift */; };
+		84A2FE2422D912F200CCF2C9 /* AddNewBillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2FE2322D912F200CCF2C9 /* AddNewBillViewController.swift */; };
+		84A2FE2622D929B200CCF2C9 /* AddHydroBillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2FE2522D929B200CCF2C9 /* AddHydroBillViewController.swift */; };
+		84A2FE2822D93FBD00CCF2C9 /* AddMobileBillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2FE2722D93FBD00CCF2C9 /* AddMobileBillViewController.swift */; };
+		84A2FE2A22D9401500CCF2C9 /* AddInternetBillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2FE2922D9401500CCF2C9 /* AddInternetBillViewController.swift */; };
 		84BFDE3322D85C4400AEBA37 /* BillListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BFDE3222D85C4400AEBA37 /* BillListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +60,13 @@
 		842C7E1F22D7FD8E00A75CBD /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		842C7E2122D7FE4200A75CBD /* MyDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataStore.swift; sourceTree = "<group>"; };
 		842C7E2322D80DDD00A75CBD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		84A2FE1D22D8E29200CCF2C9 /* ShowBillDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowBillDetailsViewController.swift; sourceTree = "<group>"; };
+		84A2FE1F22D8E31400CCF2C9 /* NewCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCustomerViewController.swift; sourceTree = "<group>"; };
+		84A2FE2122D906B000CCF2C9 /* BillTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillTableViewCell.swift; sourceTree = "<group>"; };
+		84A2FE2322D912F200CCF2C9 /* AddNewBillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewBillViewController.swift; sourceTree = "<group>"; };
+		84A2FE2522D929B200CCF2C9 /* AddHydroBillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHydroBillViewController.swift; sourceTree = "<group>"; };
+		84A2FE2722D93FBD00CCF2C9 /* AddMobileBillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMobileBillViewController.swift; sourceTree = "<group>"; };
+		84A2FE2922D9401500CCF2C9 /* AddInternetBillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInternetBillViewController.swift; sourceTree = "<group>"; };
 		84BFDE3222D85C4400AEBA37 /* BillListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +112,13 @@
 				842C7E0222D7FA7800A75CBD /* UserInfo.plist */,
 				842C7E2122D7FE4200A75CBD /* MyDataStore.swift */,
 				84BFDE3222D85C4400AEBA37 /* BillListTableViewController.swift */,
+				84A2FE1D22D8E29200CCF2C9 /* ShowBillDetailsViewController.swift */,
+				84A2FE1F22D8E31400CCF2C9 /* NewCustomerViewController.swift */,
+				84A2FE2122D906B000CCF2C9 /* BillTableViewCell.swift */,
+				84A2FE2322D912F200CCF2C9 /* AddNewBillViewController.swift */,
+				84A2FE2522D929B200CCF2C9 /* AddHydroBillViewController.swift */,
+				84A2FE2722D93FBD00CCF2C9 /* AddMobileBillViewController.swift */,
+				84A2FE2922D9401500CCF2C9 /* AddInternetBillViewController.swift */,
 			);
 			path = C0751142_MidTerm_MAD3115S2019;
 			sourceTree = "<group>";
@@ -212,14 +233,21 @@
 				84BFDE3322D85C4400AEBA37 /* BillListTableViewController.swift in Sources */,
 				842C7E1322D7FD3100A75CBD /* CustomerError.swift in Sources */,
 				842C7E2022D7FD8E00A75CBD /* Customer.swift in Sources */,
+				84A2FE2222D906B000CCF2C9 /* BillTableViewCell.swift in Sources */,
 				842C7E0722D7FCF300A75CBD /* IDisplay.swift in Sources */,
 				842C7E2422D80DDD00A75CBD /* User.swift in Sources */,
 				842C7E1E22D7FD8900A75CBD /* Hydro.swift in Sources */,
 				842C7E0B22D7FCFD00A75CBD /* extension_date.swift in Sources */,
 				842C7E0F22D7FD0500A75CBD /* countryType.swift in Sources */,
+				84A2FE2622D929B200CCF2C9 /* AddHydroBillViewController.swift in Sources */,
+				84A2FE2022D8E31400CCF2C9 /* NewCustomerViewController.swift in Sources */,
+				84A2FE1E22D8E29200CCF2C9 /* ShowBillDetailsViewController.swift in Sources */,
 				842C7E0922D7FCF800A75CBD /* extension_float.swift in Sources */,
+				84A2FE2422D912F200CCF2C9 /* AddNewBillViewController.swift in Sources */,
 				842C7E0D22D7FD0100A75CBD /* extension_string.swift in Sources */,
 				842C7E1C22D7FD8400A75CBD /* Internet.swift in Sources */,
+				84A2FE2822D93FBD00CCF2C9 /* AddMobileBillViewController.swift in Sources */,
+				84A2FE2A22D9401500CCF2C9 /* AddInternetBillViewController.swift in Sources */,
 				842C7E1822D7FD6000A75CBD /* Mobile.swift in Sources */,
 				842C7E1622D7FD5B00A75CBD /* Bill.swift in Sources */,
 				842C7E0522D7FCED00A75CBD /* BillType.swift in Sources */,

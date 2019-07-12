@@ -38,7 +38,28 @@ class Mobile : Bill
         self.planName = planName
         super.init(billId: billId, billDate: billDate, billType: billType, totalBillAmount: 0)
     }
+    init(billId : Int,billDate : Date,billType : BillType,mobileModelName : String,mobileNumber : String,internetGBused : Float,minuteUsed : Int,planName : String)
+    {
+        self.mobileModelName = mobileModelName
+        self.mobileNumber = mobileNumber
+        self.internetGBused = internetGBused
+        self.minuteUsed = minuteUsed
+        self.countryType = CountryType.None
+        self.planName = planName
+        super.init(billId: billId, billDate: billDate, billType: billType, totalBillAmount: 0)
+    }
     
+    override init(billId : Int,billDate : Date,billType : BillType,totalBillAmount : Float) {
+        //Bill.BILL_ID_COUNT += 1
+        //self.billId = Bill.BILL_ID_COUNT
+        self.mobileModelName = ""
+        self.mobileNumber = ""
+        self.internetGBused = 0
+        self.minuteUsed = 0
+        self.planName = ""
+        self.countryType = CountryType.None
+        super.init(billId: billId, billDate: billDate, billType: billType, totalBillAmount: 0)
+    }
     override func calculateTotal()->Float
     {
         var total : Float = 0

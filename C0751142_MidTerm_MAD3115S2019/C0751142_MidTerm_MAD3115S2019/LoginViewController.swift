@@ -65,6 +65,8 @@ class LoginViewController: UIViewController {
                         userDefault.removeObject(forKey: "userEmail")
                         userDefault.removeObject(forKey: "userPassword")
                     }
+                    MyDataStore.LoadCustomers() // load customer for next view
+                    print("Loaded customer")
                     
                     // User password correct
                     let alertControl = UIAlertController(title: "Message", message: "Correct Information Entered", preferredStyle: .alert)
@@ -79,7 +81,6 @@ class LoginViewController: UIViewController {
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
                         let billListTableVC = storyboard.instantiateViewController(withIdentifier: "billListTableVC") as! BillListTableViewController
                         let navcon = UINavigationController(rootViewController: billListTableVC)
-                        
                         self.present(navcon, animated: true, completion: nil)
                     })
                     alertControl.addAction(actionOk)
@@ -121,6 +122,7 @@ class LoginViewController: UIViewController {
     @IBAction func unWindLogoutFromAnyScreen(storyboardSegue: UIStoryboardSegue)
     {
         let s = storyboardSegue.source as! BillListTableViewController
+        let d = storyboardSegue.source as! ShowBillDetailsViewController
         if(switchRememberMe.isOn)
         {
             getRememberMeValues()

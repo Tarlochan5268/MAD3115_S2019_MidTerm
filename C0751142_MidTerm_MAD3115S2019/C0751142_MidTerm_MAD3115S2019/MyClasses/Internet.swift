@@ -26,6 +26,22 @@ class Internet : Bill
         self.internetGBused = internetGBused
         super.init(billId: billId, billDate: billDate, billType: billType, totalBillAmount: 0)
     }
+    override init(billId : Int,billDate : Date,billType : BillType,totalBillAmount : Float) {
+        //Bill.BILL_ID_COUNT += 1
+        //self.billId = Bill.BILL_ID_COUNT
+        self.providerName = ""
+        self.internetGBused = 0
+       super.init(billId: billId, billDate: billDate, billType: billType, totalBillAmount: 0)
+    }
+    
+    init(obj : Internet)
+    {
+        //Bill.BILL_ID_COUNT += 1
+        //self.billId = Bill.BILL_ID_COUNT
+        self.providerName = obj.providerName
+        self.internetGBused = obj.internetGBused
+        super.init(billId: obj.billId, billDate: obj.billDate, billType: obj.billType, totalBillAmount: obj.totalBillAmount)
+    }
     
     override func calculateTotal()->Float
     {
