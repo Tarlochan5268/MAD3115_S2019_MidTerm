@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
    
     @IBOutlet weak var switchRememberMe: UISwitch!
@@ -16,10 +16,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var txtPassword: UITextField!
     override func viewDidLoad()
     {
+        self.title = "Login"
         super.viewDidLoad()
-        MyDataStore.readUserDataFromPlist()
-        getRememberMeValues()
-        // Do any additional setup after loading the view.
+        MyDataStore.readUserDataFromPlist() // to load data from plist into myDataStore Class
+        getRememberMeValues() // to load previous data for remember me option
         
     }
     // remember me code
@@ -65,7 +65,13 @@ class ViewController: UIViewController {
                 
                 // User password correct
                 let alertControl = UIAlertController(title: "Message", message: "Correct Information Entered", preferredStyle: .alert)
-                let actionOk = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                let actionOk = UIAlertAction(title: "Ok", style: .default, handler:
+                {
+                    _ -> Void in
+                    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "billListTableVC") as! BillListTableViewController
+                    self.navigationController?.pushViewController(nextViewController, animated: true)
+                })
                 alertControl.addAction(actionOk)
                 self .present(alertControl , animated: true , completion: nil)
                 
@@ -73,7 +79,7 @@ class ViewController: UIViewController {
             else
             {
                 //user password incorrect
-                let alertControl = UIAlertController(title: "Message", message: "Incorrect Password Entered", preferredStyle: .alert)
+                let alertControl = UIAlertController(title: "Message", message: "Invalid Password Entered", preferredStyle: .alert)
                 let actionOk = UIAlertAction(title: "Ok", style: .default, handler: nil)
                 alertControl.addAction(actionOk)
                 self .present(alertControl , animated: true , completion: nil)
@@ -83,7 +89,7 @@ class ViewController: UIViewController {
         else
         {
             //User Doesnt Exist
-            let alertControl = UIAlertController(title: "Message", message: "User Does Not Exist", preferredStyle: .alert)
+            let alertControl = UIAlertController(title: "Message", message: "Invalid Email or Password Entered. Try Again..", preferredStyle: .alert)
             let actionOk = UIAlertAction(title: "Ok", style: .default, handler: nil)
             alertControl.addAction(actionOk)
             self .present(alertControl , animated: true , completion: nil)
@@ -91,12 +97,14 @@ class ViewController: UIViewController {
         }
     }
     
+    //Un Wind used for Logout from any screen
+    /*
     @IBAction func unWindLogoutFromAnyScreen(storyboardSegue: UIStoryboardSegue)
     {
         let s = storyboardSegue.source as! WelcomeViewController
         txtPassword.text = ""
         txtEmail.text = ""
     }
-    
+    */
 }
 

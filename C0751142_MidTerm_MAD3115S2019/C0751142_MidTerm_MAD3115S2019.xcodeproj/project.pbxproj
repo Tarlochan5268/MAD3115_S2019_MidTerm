@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		842C7DF022D7F90E00A75CBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C7DEF22D7F90E00A75CBD /* AppDelegate.swift */; };
-		842C7DF222D7F90E00A75CBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C7DF122D7F90E00A75CBD /* ViewController.swift */; };
+		842C7DF222D7F90E00A75CBD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C7DF122D7F90E00A75CBD /* LoginViewController.swift */; };
 		842C7DF522D7F90E00A75CBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842C7DF322D7F90E00A75CBD /* Main.storyboard */; };
 		842C7DF722D7F90F00A75CBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 842C7DF622D7F90F00A75CBD /* Assets.xcassets */; };
 		842C7DFA22D7F90F00A75CBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842C7DF822D7F90F00A75CBD /* LaunchScreen.storyboard */; };
@@ -27,12 +27,13 @@
 		842C7E2022D7FD8E00A75CBD /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C7E1F22D7FD8E00A75CBD /* Customer.swift */; };
 		842C7E2222D7FE4200A75CBD /* MyDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C7E2122D7FE4200A75CBD /* MyDataStore.swift */; };
 		842C7E2422D80DDD00A75CBD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C7E2322D80DDD00A75CBD /* User.swift */; };
+		84BFDE3322D85C4400AEBA37 /* BillListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BFDE3222D85C4400AEBA37 /* BillListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		842C7DEC22D7F90E00A75CBD /* C0751142_MidTerm_MAD3115S2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = C0751142_MidTerm_MAD3115S2019.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		842C7DEF22D7F90E00A75CBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		842C7DF122D7F90E00A75CBD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		842C7DF122D7F90E00A75CBD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		842C7DF422D7F90E00A75CBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		842C7DF622D7F90F00A75CBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		842C7DF922D7F90F00A75CBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,6 +53,7 @@
 		842C7E1F22D7FD8E00A75CBD /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		842C7E2122D7FE4200A75CBD /* MyDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataStore.swift; sourceTree = "<group>"; };
 		842C7E2322D80DDD00A75CBD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		84BFDE3222D85C4400AEBA37 /* BillListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,13 +90,14 @@
 				842C7E1122D7FD2100A75CBD /* Error */,
 				842C7E0122D7FA3A00A75CBD /* Utilities */,
 				842C7DEF22D7F90E00A75CBD /* AppDelegate.swift */,
-				842C7DF122D7F90E00A75CBD /* ViewController.swift */,
+				842C7DF122D7F90E00A75CBD /* LoginViewController.swift */,
 				842C7DF322D7F90E00A75CBD /* Main.storyboard */,
 				842C7DF622D7F90F00A75CBD /* Assets.xcassets */,
 				842C7DF822D7F90F00A75CBD /* LaunchScreen.storyboard */,
 				842C7DFB22D7F90F00A75CBD /* Info.plist */,
 				842C7E0222D7FA7800A75CBD /* UserInfo.plist */,
 				842C7E2122D7FE4200A75CBD /* MyDataStore.swift */,
+				84BFDE3222D85C4400AEBA37 /* BillListTableViewController.swift */,
 			);
 			path = C0751142_MidTerm_MAD3115S2019;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				842C7E2222D7FE4200A75CBD /* MyDataStore.swift in Sources */,
+				84BFDE3322D85C4400AEBA37 /* BillListTableViewController.swift in Sources */,
 				842C7E1322D7FD3100A75CBD /* CustomerError.swift in Sources */,
 				842C7E2022D7FD8E00A75CBD /* Customer.swift in Sources */,
 				842C7E0722D7FCF300A75CBD /* IDisplay.swift in Sources */,
@@ -219,7 +223,7 @@
 				842C7E1822D7FD6000A75CBD /* Mobile.swift in Sources */,
 				842C7E1622D7FD5B00A75CBD /* Bill.swift in Sources */,
 				842C7E0522D7FCED00A75CBD /* BillType.swift in Sources */,
-				842C7DF222D7F90E00A75CBD /* ViewController.swift in Sources */,
+				842C7DF222D7F90E00A75CBD /* LoginViewController.swift in Sources */,
 				842C7DF022D7F90E00A75CBD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
