@@ -11,16 +11,33 @@ import UIKit
 class ViewController: UIViewController {
 
    
+    @IBOutlet weak var switchRememberMe: UISwitch!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     override func viewDidLoad()
     {
         super.viewDidLoad()
         MyDataStore.readUserDataFromPlist()
+        getRememberMeValues()
         // Do any additional setup after loading the view.
         
     }
-    
+    // remember me code
+    private func getRememberMeValues()
+    {
+        let userDefault = UserDefaults.standard
+        
+        if let email = userDefault.string(forKey: "userEmail")
+        {
+            txtEmail.text = email
+            
+            if let pwd = userDefault.string(forKey: "userPassword")
+            {
+                txtPassword.text = pwd
+            }
+        }
+        switchRememberMe.setOn(true, animated: true)
+    }
     
     @IBAction func actionLogin(_ sender: Any)
     {
@@ -31,6 +48,21 @@ class ViewController: UIViewController {
             // User Exists
             if(myPassword == password)
             {
+                // user password correct
+                // remember me code
+                let userDefault = UserDefaults.standard
+                if switchRememberMe.isOn
+                {
+                    
+                    userDefault.setValue(txtEmail.text, forKey: "userEmail")
+                    userDefault.set(txtPassword.text, forKey: "userPassword")
+                }
+                else
+                {
+                    userDefault.removeObject(forKey: "userEmail")
+                    userDefault.removeObject(forKey: "userPassword")
+                }
+                
                 // User password correct
                 let alertControl = UIAlertController(title: "Message", message: "Correct Information Entered", preferredStyle: .alert)
                 let actionOk = UIAlertAction(title: "Ok", style: .default, handler: nil)
@@ -54,7 +86,9 @@ class ViewController: UIViewController {
             let alertControl = UIAlertController(title: "Message", message: "User Does Not Exist", preferredStyle: .alert)
             let actionOk = UIAlertAction(title: "Ok", style: .default, handler: nil)
             alertControl.addAction(actionOk)
-            self .present(alertControl , animated: true , completion: nil)        }
+            self .present(alertControl , animated: true , completion: nil)
+            
+        }
     }
     
 }

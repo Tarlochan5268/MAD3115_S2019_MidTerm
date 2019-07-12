@@ -80,6 +80,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="d4T-dT-8iZ"/>
                     <connections>
+                        <outlet property="switchRememberMe" destination="jdN-uc-ZMq" id="q4b-xH-NhI"/>
                         <outlet property="txtEmail" destination="HfI-Gj-pNU" id="jOv-HG-QeE"/>
                         <outlet property="txtPassword" destination="GwB-gf-7OZ" id="S6t-wZ-M2P"/>
                     </connections>
