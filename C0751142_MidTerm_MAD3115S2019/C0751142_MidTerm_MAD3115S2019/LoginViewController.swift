@@ -70,10 +70,17 @@ class LoginViewController: UIViewController {
                     let alertControl = UIAlertController(title: "Message", message: "Correct Information Entered", preferredStyle: .alert)
                     let actionOk = UIAlertAction(title: "Ok", style: .default, handler:
                     {
+                        /*
                         _ -> Void in
                         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
                         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "billListTableVC") as! BillListTableViewController
-                        self.navigationController?.pushViewController(nextViewController, animated: true)
+                        self.navigationController?.pushViewController(nextViewController, animated: true) */
+                        _ -> Void in
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let billListTableVC = storyboard.instantiateViewController(withIdentifier: "billListTableVC") as! BillListTableViewController
+                        let navcon = UINavigationController(rootViewController: billListTableVC)
+                        
+                        self.present(navcon, animated: true, completion: nil)
                     })
                     alertControl.addAction(actionOk)
                     self .present(alertControl , animated: true , completion: nil)
@@ -111,13 +118,19 @@ class LoginViewController: UIViewController {
     }
     
     //Un Wind used for Logout from any screen
-    /*
     @IBAction func unWindLogoutFromAnyScreen(storyboardSegue: UIStoryboardSegue)
     {
-        let s = storyboardSegue.source as! WelcomeViewController
-        txtPassword.text = ""
-        txtEmail.text = ""
+        let s = storyboardSegue.source as! BillListTableViewController
+        if(switchRememberMe.isOn)
+        {
+            getRememberMeValues()
+        }
+        else
+        {
+            txtPassword.text = ""
+            txtEmail.text = ""
+        }
+        print("Logout")
     }
-    */
 }
 
