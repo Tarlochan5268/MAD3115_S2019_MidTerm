@@ -10,6 +10,12 @@ import UIKit
 
 class AddMobileBillViewController: UIViewController {
 
+    var selectedRow : Int?
+    var bill = Mobile()
+    @IBOutlet weak var txtminutesUsed: UITextField!
+    @IBOutlet weak var txtGbUsed: UITextField!
+    @IBOutlet weak var txtMobileNumber: UITextField!
+    @IBOutlet weak var txtModelName: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,6 +23,26 @@ class AddMobileBillViewController: UIViewController {
     }
     
 
+    @IBAction func actionAddBill(_ sender: Any)
+    {
+        let modelname = txtModelName.text!
+        let mobileNumber = txtMobileNumber.text!
+        let Gbused : Float = Float(txtGbUsed.text!)!
+        let minutesUsed : Float = Float(txtminutesUsed.text!)!
+        var customer : Customer = MyDataStore.customerArray[selectedRow!]
+        var finalBill : Bill = Mobile(obj: bill)
+        customer.addBillToCustomer(bill: bill)
+        //print("after customer bill : ",customer.arrayOfBills.count)
+        MyDataStore.removeInsertCustomer(row: selectedRow!, customer: customer)
+        let alertControl = UIAlertController(title: "Message", message: "New Bill Added Successfully", preferredStyle: .alert)
+        let actionOk = UIAlertAction(title: "Ok", style: .default, handler:
+        {
+            _ -> Void in
+            self.navigationController?.popToRootViewController(animated: true)
+        })
+        alertControl.addAction(actionOk)
+        self .present(alertControl , animated: true , completion: nil)
+    }
     /*
     // MARK: - Navigation
 

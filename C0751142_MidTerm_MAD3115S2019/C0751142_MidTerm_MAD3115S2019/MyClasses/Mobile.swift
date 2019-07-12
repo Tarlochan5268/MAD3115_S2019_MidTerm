@@ -38,6 +38,17 @@ class Mobile : Bill
         self.planName = planName
         super.init(billId: billId, billDate: billDate, billType: billType, totalBillAmount: 0)
     }
+    
+    init(obj : Mobile)
+    {
+        self.mobileModelName = obj.mobileModelName
+        self.mobileNumber = obj.mobileNumber
+        self.internetGBused = obj.internetGBused
+        self.minuteUsed = obj.minuteUsed
+        self.countryType = obj.countryType
+        self.planName = obj.planName
+        super.init(billId: obj.billId, billDate: obj.billDate, billType: obj.billType, totalBillAmount: obj.totalBillAmount)
+    }
     init(billId : Int,billDate : Date,billType : BillType,mobileModelName : String,mobileNumber : String,internetGBused : Float,minuteUsed : Int,planName : String)
     {
         self.mobileModelName = mobileModelName
