@@ -91,5 +91,12 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func unWindLogoutFromAnyScreen(storyboardSegue: UIStoryboardSegue)
+    {
+        let s = storyboardSegue.source as! WelcomeViewController
+        txtPassword.text = ""
+        txtEmail.text = ""
+    }
+    
 }
 
