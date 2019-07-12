@@ -10,7 +10,13 @@ import UIKit
 
 class BillTableViewCell: UITableViewCell
 {
-
+    @IBOutlet weak var lblAgencyName: UILabel!
+    
+    @IBOutlet weak var lblminuteused: UILabel!
+    @IBOutlet weak var lblgbused: UILabel!
+    @IBOutlet weak var lblmobilenumber: UILabel!
+    @IBOutlet weak var lblmodelnumber: UILabel!
+    @IBOutlet weak var lblunitused: UILabel!
     @IBOutlet weak var lblPay: UILabel!
     @IBOutlet weak var lblType: UILabel!
     @IBOutlet weak var lblDate: UILabel!

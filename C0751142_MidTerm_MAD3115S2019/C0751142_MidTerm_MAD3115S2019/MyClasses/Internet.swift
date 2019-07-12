@@ -40,7 +40,7 @@ class Internet : Bill
         //self.billId = Bill.BILL_ID_COUNT
         self.providerName = obj.providerName
         self.internetGBused = obj.internetGBused
-        super.init(billId: obj.billId, billDate: obj.billDate, billType: obj.billType, totalBillAmount: obj.totalBillAmount)
+        super.init(billId: obj.billId, billDate: obj.billDate, billType: obj.billType, totalBillAmount: obj.calculateTotal())
     }
     
     override func calculateTotal()->Float

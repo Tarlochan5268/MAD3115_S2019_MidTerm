@@ -25,23 +25,46 @@ class AddMobileBillViewController: UIViewController {
 
     @IBAction func actionAddBill(_ sender: Any)
     {
-        let modelname = txtModelName.text!
-        let mobileNumber = txtMobileNumber.text!
-        let Gbused : Float = Float(txtGbUsed.text!)!
-        let minutesUsed : Float = Float(txtminutesUsed.text!)!
-        var customer : Customer = MyDataStore.customerArray[selectedRow!]
-        var finalBill : Bill = Mobile(obj: bill)
-        customer.addBillToCustomer(bill: bill)
-        //print("after customer bill : ",customer.arrayOfBills.count)
-        MyDataStore.removeInsertCustomer(row: selectedRow!, customer: customer)
-        let alertControl = UIAlertController(title: "Message", message: "New Bill Added Successfully", preferredStyle: .alert)
-        let actionOk = UIAlertAction(title: "Ok", style: .default, handler:
+        let empty : String = ""
+        if(txtModelName.text! == empty || txtModelName.text! == empty || txtminutesUsed.text! == empty || txtGbUsed.text! == empty)
         {
-            _ -> Void in
-            self.navigationController?.popToRootViewController(animated: true)
-        })
-        alertControl.addAction(actionOk)
-        self .present(alertControl , animated: true , completion: nil)
+            
+            let alertControl = UIAlertController(title: "Message", message: "Sorry Dont leave any Fields Empty ", preferredStyle: .alert)
+            let actionOk = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alertControl.addAction(actionOk)
+            self .present(alertControl , animated: true , completion: nil)
+        }
+        else
+        {
+            if(txtMobileNumber.text!.count == 10)
+            {
+                
+                let modelname = txtModelName.text!
+                let mobileNumber = txtMobileNumber.text!
+                let Gbused : Float = Float(txtGbUsed.text!)!
+                let minutesUsed : Float = Float(txtminutesUsed.text!)!
+                var customer : Customer = MyDataStore.customerArray[selectedRow!]
+                var finalBill : Bill = Mobile(obj: bill)
+                customer.addBillToCustomer(bill: bill)
+                //print("after customer bill : ",customer.arrayOfBills.count)
+                MyDataStore.removeInsertCustomer(row: selectedRow!, customer: customer)
+                let alertControl = UIAlertController(title: "Message", message: "New Bill Added Successfully", preferredStyle: .alert)
+                let actionOk = UIAlertAction(title: "Ok", style: .default, handler:
+                {
+                    _ -> Void in
+                    self.navigationController?.popToRootViewController(animated: true)
+                })
+                alertControl.addAction(actionOk)
+                self .present(alertControl , animated: true , completion: nil)
+            }
+            else
+            {
+                let alertControl = UIAlertController(title: "Message", message: "Please Enter 10 digit valid mobile number ", preferredStyle: .alert)
+                let actionOk = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                alertControl.addAction(actionOk)
+                self .present(alertControl , animated: true , completion: nil)
+            }
+        }
     }
     /*
     // MARK: - Navigation

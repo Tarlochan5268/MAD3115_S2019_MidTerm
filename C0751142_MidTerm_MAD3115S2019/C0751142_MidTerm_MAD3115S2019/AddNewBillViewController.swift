@@ -50,13 +50,21 @@ class AddNewBillViewController: UIViewController,UIPickerViewDelegate,UIPickerVi
         let count = customer.arrayOfBills.count + 1
         if(AddNewBillViewController.billTypeChoosen == "Mobile")
         {
-            var bill : Bill = Mobile(billId: count, billDate: billDate, billType: BillType.Mobile, totalBillAmount: totalBill)
-            
-            
+            var bill = Mobile(billId: count, billDate: billDate, billType: BillType.Hydro, totalBillAmount: totalBill)
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "AddMobileBillVC") as! AddMobileBillViewController
+            nextViewController.bill = bill
+            nextViewController.selectedRow = AddNewBillViewController.SELECTED_ROW
+            self.navigationController?.pushViewController(nextViewController, animated: true)
         }
         else if(AddNewBillViewController.billTypeChoosen == "Internet")
         {
-            
+            var bill = Internet(billId: count, billDate: billDate, billType: BillType.Internet, totalBillAmount: totalBill)
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "AddInternetBillVC") as! AddInternetBillViewController
+            nextViewController.bill = bill
+            nextViewController.selectedRow = AddNewBillViewController.SELECTED_ROW
+            self.navigationController?.pushViewController(nextViewController, animated: true)
         }
         else
         {

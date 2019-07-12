@@ -64,12 +64,10 @@ class ShowBillDetailsViewController: UIViewController,UITableViewDelegate,UITabl
         //billArray = customer.arrayOfBills
         let bill = billArray[indexPath.row]
         print("bill -> ",bill.billId," ",bill.billDate)
-        cell.lblBillId.text = String(bill.billId)
-        cell.lblType.text = String(bill.billType.rawValue)
-        cell.lblDate.text = String(bill.billDate.getForamttedDate())
-        cell.lblPay.text = String(bill.totalBillAmount)
-        
-        
+        cell.lblBillId.text = "Bill Id : \(String(bill.billId))"
+        cell.lblType.text = "Bill Type : \(String(bill.billType.rawValue))"
+        cell.lblDate.text = "Bill Date : \(String(bill.billDate.getForamttedDate()))"
+        cell.lblPay.text = "Bill Amount : \(bill.totalBillAmount.currency())"
         return cell
     }
 }

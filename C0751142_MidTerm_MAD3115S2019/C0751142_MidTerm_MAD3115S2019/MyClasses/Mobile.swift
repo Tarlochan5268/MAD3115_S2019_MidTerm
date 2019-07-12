@@ -47,7 +47,7 @@ class Mobile : Bill
         self.minuteUsed = obj.minuteUsed
         self.countryType = obj.countryType
         self.planName = obj.planName
-        super.init(billId: obj.billId, billDate: obj.billDate, billType: obj.billType, totalBillAmount: obj.totalBillAmount)
+        super.init(billId: obj.billId, billDate: obj.billDate, billType: obj.billType, totalBillAmount: obj.calculateTotal())
     }
     init(billId : Int,billDate : Date,billType : BillType,mobileModelName : String,mobileNumber : String,internetGBused : Float,minuteUsed : Int,planName : String)
     {
