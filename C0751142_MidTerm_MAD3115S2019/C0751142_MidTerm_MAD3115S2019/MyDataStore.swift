@@ -28,7 +28,7 @@ class MyDataStore
                         myuser.email = user["email"] as! String
                         myuser.password = user["password"] as! String
                     }
-                    usersArray.append(myuser)
+                    usersArray.append(myuser) 
                 }
             }
             
